@@ -1,5 +1,11 @@
+<?php
+    include 'conecta.php';
+
+?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -110,45 +116,60 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Tabela</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">
+                                <a class= "btn btn-success" href="">INSERIR NOVO CLIENTE</a>
+                            </li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                Tabela de Clientes
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>ID</th>
+                                            <th>NOME</th>
+                                            <th>E-MAIL</th>
+                                            <th>TELEFONE</th>
+                                            <th>OPÇÕES</th>
+
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>ID</th>
+                                            <th>NOME</th>
+                                            <th>E-MAIL</th>
+                                            <th>TELEFONE</th>
+                                            <th>OPÇÕES</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+
+                                    <?php
+                                        $sql = "SELECT * FROM clientes";
+                                        $consulta = $conexao->query($sql);
+                                        while($dados = $consulta->fetch_assoc()){
+                                            echo $dados['id_cliente']."<br>";
+                                            echo $dados['nome_cliente']."<br>";
+                                            echo $dados['email_cliente']."<br>";
+                                            echo $dados['telefone']."<br>";
+                                        }
+                                    
+                                    ?>
                                         <tr>
+                                            <td>1</td>
                                             <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td>tigernixon@gmail.com</td>
+                                            <td>(11)9176543245</td>
+                                            <td>
+                                                <a class= "btn btn-info" href="">ATUALIZAR</a>
+                                                <a class= "btn btn-danger" href="">APAGAR</a>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -159,7 +180,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Wesley Website 2024</div>
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
