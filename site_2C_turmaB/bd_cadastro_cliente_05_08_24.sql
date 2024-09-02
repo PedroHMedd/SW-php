@@ -42,7 +42,6 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`id_cliente`, `nome_cliente`, `email_cliente`, `telefone`) VALUES
 (1, 'Etec MCM', 'etec@gmail.com', '(11)98765-4321'),
-(2, 'Rouparia', 'rouparia@gmail.com', '(11)99999-0011');
 
 -- --------------------------------------------------------
 
@@ -62,7 +61,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'Letícia Nascimento de Almeida', 'leticia.almeidaaa2008@gmail.com', '123euamolaranja');
+(1, 'Pedro', 'pedro.h@gmail.com', '1234');
 
 --
 -- Índices para tabelas despejadas
